@@ -1,0 +1,34 @@
+{
+    "name": "exact_target",
+    "display": "Exact Target",
+    "description": "Exact Target",
+    "help": "http://guides.spreecommerce.com/integration/exact_target_integration.html",
+    "icon_url": "exact_target.png",
+    "services": [
+        {
+            "name": "send_email",
+            "path": "/send_email",
+            "description": "Sends Email",
+            "requires": {
+                "parameters": [
+                    {
+                        "name": "username",
+                        "description": "",
+                        "data_type": "string",
+                        "optional": false
+                    },
+                    {
+                        "name": "username",
+                        "description": "",
+                        "data_type": "string",
+                        "optional": false
+                    }            
+                ]
+            },
+            "recommends": {
+                "messages": ["email:send"]
+            },
+            "produces": {}
+        }
+    ]
+}
