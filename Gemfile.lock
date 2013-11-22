@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/andreibondarev/exact-target.git
+  revision: 257cd9a2793a0aab315d9348dfe74a250428c364
+  branch: improvements
+  specs:
+    exact-target (0.1.0)
+      map
+      savon (~> 2.1.0)
+
+GIT
   remote: https://github.com/spree/endpoint_base.git
   revision: 20ff4efcd2d7d9029c7252efd91202479c376eb6
   specs:
@@ -18,13 +27,13 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     addressable (2.3.5)
+    akami (1.2.0)
+      gyoku (>= 0.4.0)
+      nokogiri (>= 1.4.0)
     atomic (1.1.14)
     awesome_print (1.2.0)
-    aws-sdk (1.25.0)
-      json (~> 1.4)
-      nokogiri (>= 1.4.4, < 1.6.0)
-      uuidtools (~> 2.1)
     backports (3.3.5)
+    builder (3.2.2)
     capistrano (3.0.1)
       i18n
       rake (>= 10.0.0)
@@ -57,9 +66,13 @@ GEM
     guard-rspec (4.0.3)
       guard (>= 2.1.1)
       rspec (~> 2.14)
+    gyoku (1.0.0)
+      builder (>= 2.1.2)
     httparty (0.12.0)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
+    httpi (2.0.2)
+      rack
     i18n (0.6.5)
     json (1.8.1)
     kgio (2.8.1)
@@ -68,6 +81,7 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     lumberjack (1.0.4)
+    map (6.5.1)
     method_source (0.8.2)
     minitest (4.7.5)
     multi_json (1.8.2)
@@ -76,6 +90,7 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (2.7.0)
     nokogiri (1.5.10)
+    nori (2.0.4)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -99,6 +114,14 @@ GEM
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-mocks (2.14.4)
     safe_yaml (0.9.7)
+    savon (2.1.0)
+      akami (~> 1.2.0)
+      builder (>= 2.1.2)
+      gyoku (~> 1.0.0)
+      httpi (~> 2.0.2)
+      nokogiri (>= 1.4.0)
+      nori (~> 2.0.3)
+      wasabi (~> 3.0.0)
     shotgun (0.9)
       rack (>= 1.0)
     sinatra (1.4.3)
@@ -131,8 +154,10 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    uuidtools (2.1.4)
     vcr (2.7.0)
+    wasabi (3.0.0)
+      httpi (~> 2.0)
+      nokogiri (>= 1.4.0)
     webmock (1.15.2)
       addressable (>= 2.2.7)
       crack (>= 0.3.2)
@@ -142,10 +167,10 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
-  aws-sdk (= 1.25.0)
   capistrano
   debugger
   endpoint_base!
+  exact-target!
   foreman
   guard-rspec
   httparty
