@@ -1,7 +1,7 @@
 {
     "name": "exact_target",
-    "display": "Exact Target",
-    "description": "Exact Target",
+    "display": "ExactTarget",
+    "description": "ExactTarget",
     "help": "http://guides.spreecommerce.com/integration/exact_target_integration.html",
     "icon_url": "exact_target.png",
     "services": [
@@ -13,19 +13,19 @@
                 "parameters": [
                     {
                         "name": "username",
-                        "description": "Exact Target Username",
+                        "description": "ExactTarget Username",
                         "data_type": "string",
                         "optional": false
                     },
                     {
                         "name": "password",
-                        "description": "Exact Target Password",
+                        "description": "ExactTarget Password",
                         "data_type": "string",
                         "optional": false
                     },
                     {
                         "name": "api_url",
-                        "description": "Exact Target API URL",
+                        "description": "ExactTarget API URL",
                         "data_type": "string",
                         "optional": true
                     }            
