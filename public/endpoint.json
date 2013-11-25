@@ -13,15 +13,21 @@
                 "parameters": [
                     {
                         "name": "username",
-                        "description": "",
+                        "description": "Exact Target Username",
                         "data_type": "string",
                         "optional": false
                     },
                     {
-                        "name": "username",
-                        "description": "",
+                        "name": "password",
+                        "description": "Exact Target Password",
                         "data_type": "string",
                         "optional": false
+                    },
+                    {
+                        "name": "api_url",
+                        "description": "Exact Target API URL",
+                        "data_type": "string",
+                        "optional": true
                     }            
                 ]
             },

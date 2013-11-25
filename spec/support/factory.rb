@@ -1,25 +1,29 @@
 module Factory
   class << self
 
-    def access_key_id
+    def username
       '12345'
     end
 
-    def secret_access_key
+    def password
       '12345'
+    end
+
+    def api_url
+      'webservice.s6.exacttarget.com'
     end
 
     def config
       [
-        { 'name' => 'access_key_id', 'value' => access_key_id },
-        { 'name' => 'secret_access_key', 'value' => secret_access_key }
+        { 'name' => 'username', 'value' => username },
+        { 'name' => 'password', 'value' => password }
       ]
     end
 
     def processed_config
       { 
-        'access_key_id' => access_key_id,
-        'secret_access_key' => secret_access_key
+        'username' => username,
+        'password' => password
       }
     end
 
