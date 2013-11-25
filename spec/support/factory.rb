@@ -15,15 +15,15 @@ module Factory
 
     def config
       [
-        { 'name' => 'username', 'value' => username },
-        { 'name' => 'password', 'value' => password }
+        { 'name' => 'exact_target.username', 'value' => username },
+        { 'name' => 'exact_target.password', 'value' => password }
       ]
     end
 
     def processed_config
       { 
-        'username' => username,
-        'password' => password
+        'exact_target.username' => username,
+        'exact_target.password' => password
       }
     end
 

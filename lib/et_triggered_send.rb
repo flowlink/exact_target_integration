@@ -1,4 +1,4 @@
-require './lib/amazon_ses_config'
+require './lib/et_config'
 
 class ETTriggeredSend < ETConfig
   attr_accessor :sender
