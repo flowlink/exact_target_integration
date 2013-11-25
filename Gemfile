@@ -9,7 +9,7 @@ gem 'capistrano'
 gem 'httparty'
 gem 'json'
 gem 'nokogiri'
-gem 'exact-target', :git => 'https://github.com/andreibondarev/exact-target.git', :branch => 'improvements'
+gem 'exact-target', :path => '/Users/abondarev/Code/exact-target'
 
 group :development do
   gem 'shotgun'

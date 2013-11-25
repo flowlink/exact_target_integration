@@ -20,7 +20,7 @@
                     {
                         "name": "password",
                         "description": "ExactTarget Password",
-                        "data_type": "string",
+                        "data_type": "password",
                         "optional": false
                     },
                     {

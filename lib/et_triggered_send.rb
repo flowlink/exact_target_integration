@@ -1,6 +1,6 @@
 require './lib/et_config'
 
-class ETTriggeredSend < ETConfig
+class ETTriggeredSend
   attr_accessor :sender
 
   def initialize config
@@ -9,7 +9,7 @@ class ETTriggeredSend < ETConfig
   end
 
 
-  def send! template, email, attributes
+  def send_email! template, email, attributes
     sender.send!(template, email, attributes)
   end
 end

@@ -6,7 +6,7 @@ class ExactTargetEndpoint < EndpointBase
   post '/send_email' do
     begin
       code = 200
-      response = Processor.send_email! @config, email_hash
+      response = Processor.process_email! @config, payload
     rescue => e
       code = 500
       response = error_notification(e)
@@ -15,8 +15,8 @@ class ExactTargetEndpoint < EndpointBase
   end
 
   private
-  def email_hash
-    @message[:payload][:email] or raise InvalidArguments, 'Email hash must be provided'
+  def payload
+    @message[:payload]
   end
 
   def message_id
