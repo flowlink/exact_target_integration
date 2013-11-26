@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/andreibondarev/exact-target.git
+  revision: 6355ee10b0cde6c129b5e2ccdcc767f23c1a7778
+  branch: improvements
+  specs:
+    exact-target (0.1.0)
+      map
+      savon (~> 2.1.0)
+
+GIT
   remote: https://github.com/spree/endpoint_base.git
   revision: 20ff4efcd2d7d9029c7252efd91202479c376eb6
   specs:
@@ -7,13 +16,6 @@ GIT
       json
       sinatra (= 1.4.3)
       sinatra-contrib
-
-PATH
-  remote: /Users/abondarev/Code/exact-target
-  specs:
-    exact-target (0.1.0)
-      map
-      savon (~> 2.1.0)
 
 GEM
   remote: https://rubygems.org/
