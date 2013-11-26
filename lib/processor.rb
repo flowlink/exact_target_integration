@@ -3,11 +3,12 @@ class Processor
   def self.process_email! config, payload
     trigger = ETTriggeredSend.new(config)
 
+    validate_email_hash!(payload[:email])
+
     template = payload[:email][:template]
     email = payload[:email][:to]
     parameters = payload[:email][:parameters]
 
-    # validate_email_hash!(email_hash)
     result = trigger.send_email!(template, email, parameters)
 
     if result && result["status_code"] == "OK"
@@ -18,11 +19,11 @@ class Processor
   end
 
   private
-  # def self.validate_email_hash! h
-  #   if h[:to].blank? || h[:from].blank? || h[:subject].blank? || h[:body].blank?
-  #     raise InvalidArguments, "'to', 'from', 'subject', 'body' attributes are required"
-  #   end
-  # end
+  def self.validate_email_hash! h
+    if h[:to].blank? || h[:template].blank? || h[:parameters].blank?
+      raise InvalidArguments, "'to', 'template', 'parameters' attributes are required"
+    end
+  end
 
   def self.success_notification email
     { notifications:
