@@ -2,11 +2,11 @@ module Factory
   class << self
 
     def username
-      '6227981_API_User'
+      'username'
     end
 
     def password
-      'Xo5!8L@g1'
+      'password'
     end
 
     def api_url
