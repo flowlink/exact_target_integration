@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://webservice.s6.exacttarget.com/Service.asmx
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><soap:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="http://exacttarget.com/wsdl/partnerAPI"
+        xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"><soap:Header><wsa:To>https://webservice.s6.exacttarget.com/Service.asmx</wsa:To><wsa:Action>CreateRequest</wsa:Action><wsse:Security
+        xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"><wsse:UsernameToken
+        wsu:Id="UsernameToken-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsse:Username>6227981_API_User</wsse:Username><wsse:Password
+        Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">Xo5!8L@g1</wsse:Password></wsse:UsernameToken></wsse:Security></soap:Header><soap:Body><ns1:CreateRequest
+        xmlns="http://exacttarget.com/wsdl/partnerAPI"><Options/><Objects xsi:type="TriggeredSend"><ObjectID/><TriggeredSendDefinition><ObjectID/><CustomerKey>sample_order</CustomerKey></TriggeredSendDefinition><Subscribers><ObjectID/><EmailAddress>andrei@spreecommerce.com</EmailAddress><SubscriberKey>andrei@spreecommerce.com</SubscriberKey><Attributes><Name>Subject</Name><Value>Order
+        Confirmation</Value></Attributes><Attributes><Name>First_Name</Name><Value>Andrei</Value></Attributes><Attributes><Name>Last_Name</Name><Value>Bondarev</Value></Attributes><Attributes><Name>Order_Number</Name><Value>R927560531</Value></Attributes><Attributes><Name>Order_Date</Name><Value>2013-07-30T19:19:05.000Z</Value></Attributes><Attributes><Name>Ship_To_Address</Name><Value>7735
+        Old Georgetown Rd, Bethesda, Maryland, US, 20814</Value></Attributes><Attributes><Name>Bill_To_Address</Name><Value>7735
+        Old Georgetown Rd, Bethesda, Maryland, US, 20814</Value></Attributes></Subscribers></Objects></ns1:CreateRequest></soap:Body></soap:Envelope>
+    headers:
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '1986'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, max-age=0
+      Content-Length:
+      - '1361'
+      Content-Type:
+      - text/xml; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Tue, 26 Nov 2013 19:03:43 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+        xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><soap:Header><wsa:Action>CreateRequestResponse</wsa:Action><wsa:MessageID>urn:uuid:da44c742-7407-489c-bef0-103e8a34e4ce</wsa:MessageID><wsa:RelatesTo>urn:uuid:94c4619f-73d8-48c7-8026-51108448a139</wsa:RelatesTo><wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To><wsse:Security><wsu:Timestamp
+        wsu:Id="Timestamp-166c88ea-ab92-40cb-a88e-a16ddc7a5579"><wsu:Created>2013-11-26T19:03:43Z</wsu:Created><wsu:Expires>2013-11-26T19:08:43Z</wsu:Expires></wsu:Timestamp></wsse:Security></soap:Header><soap:Body><CreateResponse
+        xmlns="http://exacttarget.com/wsdl/partnerAPI"><Results xsi:type="TriggeredSendCreateResult"><StatusCode>OK</StatusCode><StatusMessage>Created
+        TriggeredSend</StatusMessage><OrdinalID>0</OrdinalID><NewID>0</NewID></Results><RequestID>4060b4b5-102e-4596-8d4b-c11516767119</RequestID><OverallStatus>OK</OverallStatus></CreateResponse></soap:Body></soap:Envelope>
+    http_version: 
+  recorded_at: Tue, 26 Nov 2013 19:03:48 GMT
+recorded_with: VCR 2.7.0

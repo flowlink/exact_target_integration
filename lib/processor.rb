@@ -5,9 +5,9 @@ class Processor
 
     validate_email_hash!(payload[:email])
 
-    template = payload[:email][:template]
-    email = payload[:email][:to]
-    parameters = payload[:email][:parameters]
+    template    = payload[:email][:template]
+    email       = payload[:email][:to]
+    parameters  = payload[:email][:parameters]
 
     result = trigger.send_email!(template, email, parameters)
 

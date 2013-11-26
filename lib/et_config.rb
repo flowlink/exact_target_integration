@@ -6,14 +6,14 @@ class ETConfig
   def initialize config
     @username = config['exact_target.username']
     @password = config['exact_target.password']
-    @server = config['exact_target.server'] || 'webservice.s6.exacttarget.com'
+    @server   = config['exact_target.server'] || 'webservice.s6.exacttarget.com'
 
     validate!
     
     ExactTarget.configure do |config|
       config.username = @username
       config.password = @password
-      config.server = @server
+      config.server   = @server
     end
   end
 
