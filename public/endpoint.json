@@ -32,7 +32,7 @@
                 ]
             },
             "recommends": {
-                "messages": ["email:send"]
+                "messages": ["order:new", "shipment:confirm"]
             },
             "produces": {}
         }
