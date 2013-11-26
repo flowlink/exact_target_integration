@@ -1,4 +1,4 @@
-APP_ROOT = "/data/amazon_ses"
+APP_ROOT = "/data/exact_target"
 
 worker_processes 3
 working_directory APP_ROOT + "/current"

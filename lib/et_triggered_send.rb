@@ -8,8 +8,8 @@ class ETTriggeredSend
     @sender = ExactTarget::TriggeredSend.new
   end
 
-
   def send_email! template, email, attributes
-    sender.send!(template, email, attributes)
+    result = sender.send!(template, email, attributes)
+    result["results"]
   end
 end

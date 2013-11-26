@@ -6,12 +6,15 @@ class ExactTargetEndpoint < EndpointBase
   post '/send_email' do
     begin
       code = 200
-      response = Processor.process_email! @config, payload
+      msg = Processor.process_email! @config, payload
+    rescue ExactTargetError => e
+      code = 500
+      msg = e.generate_error_notification
     rescue => e
       code = 500
-      response = error_notification(e)
+      msg = standard_error_notification(e)
     end
-    process_result code, base_msg.merge(response)
+    process_result code, base_msg.merge(msg)
   end
 
   private
@@ -29,13 +32,14 @@ class ExactTargetEndpoint < EndpointBase
     }
   end
 
-  def error_notification(e)
+  def standard_error_notification e
     { notifications:
       [
         {
           level: 'error',
           subject: "#{e.class}: #{e.message.strip}",
-          description: { "backtrace" => e.backtrace }.to_s
+          description: "#{e.class}: #{e.message.strip}",
+          backtrace: e.backtrace.to_a.join('\n\t')
         }
       ]
     }
