@@ -13,7 +13,7 @@ describe ETTriggeredSend do
   it 'send_email! succeeds with valid parameters' do
     VCR.use_cassette('send_email_success') do
       instance = described_class.new(config)
-      ret = instance.send_email! 'sample_order', 'andrei@spreecommerce.com', Factory.email[:email][:parameters]
+      ret = instance.send_email! 'sample_order', 'andrei@spreecommerce.com', Factory.email[:email][:variables]
 
       ret.should be_kind_of(Hash)
       ret['status_code'].should eq('OK')
@@ -23,7 +23,7 @@ describe ETTriggeredSend do
   it 'send_email! fails with invalid e-mail' do
     VCR.use_cassette('send_email_fail') do
       instance = described_class.new(config)
-      ret = instance.send_email! 'sample_order', 'spree@example.com', Factory.email[:email][:parameters]
+      ret = instance.send_email! 'sample_order', 'spree@example.com', Factory.email[:email][:variables]
 
       ret.should be_kind_of(Hash)
       ret['status_code'].should eq('Error')

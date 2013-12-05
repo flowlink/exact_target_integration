@@ -7,9 +7,9 @@ class Processor
 
     template    = payload[:email][:template]
     email       = payload[:email][:to]
-    parameters  = payload[:email][:parameters]
+    variables  = payload[:email][:variables]
 
-    result = trigger.send_email!(template, email, parameters)
+    result = trigger.send_email!(template, email, variables)
 
     if result && result["status_code"] == "OK"
       self.success_notification(email)
@@ -20,8 +20,8 @@ class Processor
 
   private
   def self.validate_email_hash! h
-    if h[:to].blank? || h[:template].blank? || h[:parameters].blank?
-      raise InvalidArguments, "'to', 'template', 'parameters' attributes are required"
+    if h[:to].blank? || h[:template].blank? || h[:variables].blank?
+      raise InvalidArguments, "'to', 'template', 'variables' attributes are required"
     end
   end
 

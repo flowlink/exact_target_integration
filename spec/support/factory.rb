@@ -578,7 +578,7 @@ module Factory
         :email => {
           :to => "andrei@spreecommerce.com",
           :template => 'sample_order',
-          :parameters => {
+          :variables => {
             'Subject' => 'Order Confirmation',
             'First_Name' => 'Andrei',
             'Last_Name' => 'Bondarev',
