@@ -58,7 +58,7 @@ describe ExactTargetEndpoint do
     last_response.body.should match("notifications")
     last_response.body.should match("error")
     last_response.body.should match("InvalidArguments")
-    last_response.body.should match("'to', 'template', 'variables' attributes are required")
+    last_response.body.should match("'to', 'template', 'subject', 'variables' attributes are required")
   end
 
   it "raises InvalidArguments error when 'to' attribute is missing" do
@@ -72,6 +72,6 @@ describe ExactTargetEndpoint do
     last_response.body.should match("notifications")
     last_response.body.should match("error")
     last_response.body.should match("InvalidArguments")
-    last_response.body.should match("'to', 'template', 'variables' attributes are required")
+    last_response.body.should match("'to', 'template', 'subject', 'variables' attributes are required")
   end
 end
