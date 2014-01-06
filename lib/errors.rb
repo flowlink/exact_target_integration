@@ -14,7 +14,8 @@ class ExactTargetError < StandardError
         {
           level: 'error',
           subject: "#{self.class}: #{errors_hash['error_code']} -- #{errors_hash['status_message']}",
-          description: "#{errors_hash['subscriber_failures']['error_description']}",
+          # TODO Investigate which error keys get returned in different error scenarios
+          description: "#{errors_hash['subscriber_failures'].try(:[], 'error_description') || errors_hash['status_message']} ",
           backtrace: self.backtrace.to_a.join('\n\t')
         }
       ]
