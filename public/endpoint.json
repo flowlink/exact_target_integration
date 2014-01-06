@@ -28,7 +28,13 @@
                         "description": "ExactTarget API URL",
                         "data_type": "string",
                         "optional": true
-                    }            
+                    },
+                    {
+                        "name": "store_name",
+                        "description": "Store's Name",
+                        "data_type": "string",
+                        "optional": false
+                    }
                 ]
             },
             "recommends": {

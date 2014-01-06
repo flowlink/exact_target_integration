@@ -5,10 +5,11 @@ class Processor
 
     validate_email_hash!(payload[:email])
 
-    template              = payload[:email][:template]
-    email                 = payload[:email][:to]
-    variables             = payload[:email][:variables]
-    variables['Subject']  = payload[:email][:subject]
+    template                = payload[:email][:template]
+    email                   = payload[:email][:to]
+    variables               = payload[:email][:variables]
+    variables['Subject']    = payload[:email][:subject]
+    variables['Store_Name'] = config['exact_target.store_name']
 
     result = trigger.send_email!(template, email, variables)
 
