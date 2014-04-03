@@ -1,6 +1,9 @@
+require "sinatra"
+require "endpoint_base"
+
 Dir['./lib/**/*.rb'].each(&method(:require))
 
-class ExactTargetEndpoint < EndpointBase
+class ExactTargetEndpoint < EndpointBase::Sinatra::Base 
   set :logging, true
 
   post '/send_email' do
