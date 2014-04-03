@@ -14,16 +14,16 @@ module Factory
     end
 
     def config
-      [
-        { 'name' => 'exact_target.username', 'value' => username },
-        { 'name' => 'exact_target.password', 'value' => password }
-      ]
+      {
+        'exact_target_username' => username,
+        'exact_target_password' => password
+      }
     end
 
     def processed_config
       { 
-        'exact_target.username' => username,
-        'exact_target.password' => password
+        'exact_target_username' => username,
+        'exact_target_password' => password
       }
     end
 

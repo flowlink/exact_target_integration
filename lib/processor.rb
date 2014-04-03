@@ -14,9 +14,9 @@ class Processor
     result = trigger.send_email!(template, email, variables)
 
     if result && result["status_code"] == "OK"
-      self.success_notification(email)
+      "Successfully enqued an email to #{email} via ExactTarget"
     elsif result && result["status_code"] == "Error"
-      raise ExactTargetError.new(result)
+      raise ExactTargetError, "#{result['subscriber_failures'].try(:[], 'error_description') || result['status_message']} "
     end
   end
 
@@ -25,17 +25,5 @@ class Processor
     if h[:to].blank? || h[:template].blank? || h[:variables].blank? || h[:subject].blank?
       raise InvalidArguments, "'to', 'template', 'subject', 'variables' attributes are required"
     end
-  end
-
-  def self.success_notification email
-    { notifications:
-      [
-        {
-          level: "info",
-          subject: "Successfully enqued an email to #{email} via ExactTarget",
-          description: "Successfully enqued an email to #{email} via ExactTarget"
-        }
-      ]
-    }
   end
 end 

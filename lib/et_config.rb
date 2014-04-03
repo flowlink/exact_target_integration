@@ -4,9 +4,9 @@ class ETConfig
   attr_accessor :username, :password, :server
 
   def initialize config
-    @username = config['exact_target.username']
-    @password = config['exact_target.password']
-    @server   = config['exact_target.server'] || 'webservice.s6.exacttarget.com'
+    @username = config['exact_target_username']
+    @password = config['exact_target_password']
+    @server   = config['exact_target_server'] || 'webservice.s6.exacttarget.com'
 
     validate!
     

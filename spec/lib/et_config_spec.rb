@@ -15,14 +15,14 @@ describe ETConfig do
 
   it 'raises error when username is missing' do
     expect {
-      config.delete('exact_target.username')
+      config.delete('exact_target_username')
       instance = described_class.new(config)
     }.to raise_error AuthorizationError
   end
 
   it 'raises error when password is missing' do
     expect {
-      config.delete('exact_target.password')
+      config.delete('exact_target_password')
       instance = described_class.new(config)
     }.to raise_error AuthorizationError
   end  

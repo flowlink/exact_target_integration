@@ -8,6 +8,8 @@ Dir["./spec/support/**/*.rb"].each(&method(:require))
 
 Sinatra::Base.environment = 'test'
 
+require 'spree/testing_support/controllers'
+
 def app
   AuguryEndpoint
 end
@@ -20,6 +22,7 @@ end
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
+  config.include Spree::TestingSupport::Controllers
 end
 
 ENV['ENDPOINT_KEY'] = 'x123'

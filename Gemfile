@@ -4,7 +4,6 @@ gem 'sinatra'
 gem 'tilt', '~> 1.4.1'
 gem 'tilt-jbuilder', require: 'sinatra/jbuilder'
 
-gem 'sinatra-contrib'
 gem 'capistrano'
 
 gem 'httparty'
