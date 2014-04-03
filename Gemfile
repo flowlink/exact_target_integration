@@ -11,8 +11,11 @@ gem 'exact-target', :git => 'https://github.com/andreibondarev/exact-target.git'
 
 group :development do
   gem 'shotgun'
-  gem 'pry'
   gem 'awesome_print'
+end
+
+group :development, :test do
+  gem 'pry'
 end
 
 group :test do
@@ -23,7 +26,6 @@ group :test do
   gem 'terminal-notifier-guard'
   gem 'rb-fsevent', '~> 0.9.1'
   gem 'rack-test'
-  gem 'debugger'
 end
 
 group :production do
@@ -32,4 +34,3 @@ group :production do
 end
 
 gem 'endpoint_base', :git => 'https://github.com/spree/endpoint_base.git'
-  # :path => '../endpoint_base'
