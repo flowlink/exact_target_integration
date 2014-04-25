@@ -1,23 +1,15 @@
-require "sinatra"
-require "endpoint_base"
-
 Dir['./lib/**/*.rb'].each(&method(:require))
 
-class ExactTargetEndpoint < EndpointBase::Sinatra::Base 
+class ExactTargetEndpoint < EndpointBase::Sinatra::Base
   set :logging, true
 
-  post '/send_email' do
-    begin
-      code = 200
-      msg = Processor.process_email! @config, @payload
-    rescue ExactTargetError => e
-      code = 500
-      msg = e.message
-    rescue => e
-      code = 500
-      msg = e.message
-    end
+  Honeybadger.configure do |config|
+    config.api_key = ENV['HONEYBADGER_KEY']
+    config.environment_name = ENV['RACK_ENV']
+  end
 
-    result code, msg
+  post '/send_email' do
+    msg = Processor.process_email! @config, @payload
+    result 200, msg
   end
 end

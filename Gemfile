@@ -10,6 +10,7 @@ gem 'httparty'
 gem 'json'
 gem 'nokogiri'
 gem 'exact-target', :git => 'https://github.com/andreibondarev/exact-target.git', :branch => 'improvements'
+gem 'honeybadger'
 
 group :development do
   gem 'shotgun'
