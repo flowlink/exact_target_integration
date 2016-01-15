@@ -36,4 +36,4 @@ group :production do
   gem 'unicorn'
 end
 
-gem 'endpoint_base', github: 'spree/endpoint_base'
+gem 'endpoint_base', github: 'flowlink/endpoint_base'
